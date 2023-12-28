@@ -7,7 +7,7 @@ module.exports = (db) => {
 
   router.get('/api/teacherdetail/:IId', (req, res) => {
     const iid = req.params.IId;
-    const sql = 'SELECT TeacherID,Name,DATE_FORMAT(TD_o_b, "%Y-%m-%d") AS TD_o_b,Email,Address,Password FROM Teacher WHERE TInstituteID = ?';
+    const sql = 'SELECT TeacherID,Name,DATE_FORMAT(TD_o_b, "%Y-%m-%d") AS TD_o_b,Email,Address,Password FROM teacher WHERE TInstituteID = ?';
   
     db.query(sql, [iid], (error, result) => {
       if (error) {
