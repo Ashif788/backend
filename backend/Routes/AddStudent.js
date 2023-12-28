@@ -15,7 +15,7 @@ module.exports=(db)=>{
 
     const iid = req.params.IId;
   
-    const sql = 'INSERT INTO Student (Regno, Name, StudentDOB, Father_name, Mother_name,Address,SInstituteID,SClassID) VALUES (?, ?, ?, ?, ?,?,?,?)';
+    const sql = 'INSERT INTO student (Regno, Name, StudentDOB, Father_name, Mother_name,Address,SInstituteID,SClassID) VALUES (?, ?, ?, ?, ?,?,?,?)';
   
     db.query(sql, [Regno, Name, Dob, Fname, Mname,Address,iid,classname], (error, result) => {
       if (error) {
