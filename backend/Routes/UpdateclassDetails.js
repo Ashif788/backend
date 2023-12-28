@@ -7,7 +7,7 @@ module.exports = (db) => {
 
   router.get('/api/updateclassdetails/:CId', (req, res) => {
     const Cid = req.params.CId;
-    const sql = 'SELECT Class_ID,Class_Name from Class where Class_ID=? '  ;
+    const sql = 'SELECT Class_ID,Class_Name from class where Class_ID=? '  ;
   
     db.query(sql, [Cid], (error, result) => {
       if (error) {
