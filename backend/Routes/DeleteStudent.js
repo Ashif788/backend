@@ -9,7 +9,7 @@ module.exports = (db) => {
     const SId = req.body.SId;
     const iid = req.params.IId;
 
-    const sql = 'SELECT * FROM Student WHERE Regno=? AND SInstituteID=?';
+    const sql = 'SELECT * FROM student WHERE Regno=? AND SInstituteID=?';
 
     db.query(sql, [SId, iid], (error, result) => {
       if (error) {
@@ -21,7 +21,7 @@ module.exports = (db) => {
             console.log(result)
           res.json({ message: 'Not found', result });
         } else {
-          const sql2 = 'DELETE  FROM Student WHERE Regno=? AND SInstituteID=?';
+          const sql2 = 'DELETE  FROM student WHERE Regno=? AND SInstituteID=?';
           db.query(sql2, [SId, iid], (error, deleteResult) => {
             if (error) {
               console.error('Database error:', error);
