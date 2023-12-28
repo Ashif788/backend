@@ -7,7 +7,7 @@ module.exports = (db) => {
 
   router.get('/api/totalstudent/:IId', (req, res) => {
     const iid = req.params.IId;
-    const sql = 'SELECT SClassID ,COUNT(Regno)"total" FROM Student WHERE SInstituteID=? GROUP BY SClassID';
+    const sql = 'SELECT SClassID ,COUNT(Regno)"total" FROM student WHERE SInstituteID=? GROUP BY SClassID';
   
     db.query(sql, [iid], (error, result) => {
       if (error) {
@@ -25,7 +25,7 @@ module.exports = (db) => {
 
   router.get('/api/totalstudent2/:IId', (req, res) => {
     const iid = req.params.IId;
-    const sql = 'SELECT COUNT(Regno)"total" FROM Student WHERE SInstituteID=? ';
+    const sql = 'SELECT COUNT(Regno)"total" FROM student WHERE SInstituteID=? ';
   
     db.query(sql, [iid], (error, result) => {
       if (error) {
@@ -43,7 +43,7 @@ module.exports = (db) => {
 
   router.get('/api/teachertotalstudent2/:TId', (req, res) => {
     const iid = req.params.TId;
-    const sql = 'SELECT COUNT(Regno)"total" FROM Student WHERE SClassID IN (SELECT Class_ID from class WHERE Class_TeacherID=?) ';
+    const sql = 'SELECT COUNT(Regno)"total" FROM student WHERE SClassID IN (SELECT Class_ID from class WHERE Class_TeacherID=?) ';
   
     db.query(sql, [iid], (error, result) => {
       if (error) {
