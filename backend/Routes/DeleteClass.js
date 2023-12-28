@@ -23,7 +23,7 @@ module.exports = (db) => {
             console.log(ClassID)
           res.json({ message: 'Not found', result });
         } else {
-          const sql2 = 'DELETE  FROM Class WHERE Class_ID=? AND InstituteCID=?';
+          const sql2 = 'DELETE  FROM class WHERE Class_ID=? AND InstituteCID=?';
           db.query(sql2, [ClassID, iid], (error, deleteResult) => {
             if (error) {
               console.error('Database error:', error);
