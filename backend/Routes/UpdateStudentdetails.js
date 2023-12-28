@@ -7,7 +7,7 @@ module.exports = (db) => {
 
   router.get('/api/updatestudentdetails/:SId', (req, res) => {
     const Sid = req.params.SId;
-    const sql = 'SELECT  Regno, Name, DATE_FORMAT(StudentDOB, "%Y-%m-%d") AS StudentDOB, Father_name, Mother_name, Address, SClassID FROM Student WHERE Regno = ?';
+    const sql = 'SELECT  Regno, Name, DATE_FORMAT(StudentDOB, "%Y-%m-%d") AS StudentDOB, Father_name, Mother_name, Address, SClassID FROM student WHERE Regno = ?';
   
     db.query(sql, [Sid], (error, result) => {
       if (error) {
