@@ -5,7 +5,7 @@ const mysql = require('mysql');
 module.exports = (db) => {
   router.get('/api/studentdetail/:IId', (req, res) => {
     const iid = req.params.IId;
-    const sql = 'SELECT  Regno, Name, DATE_FORMAT(StudentDOB, "%Y-%m-%d") AS StudentDOB, Father_name, Mother_name, Address, SClassID FROM Student WHERE SInstituteID = ?';
+    const sql = 'SELECT  Regno, Name, DATE_FORMAT(StudentDOB, "%Y-%m-%d") AS StudentDOB, Father_name, Mother_name, Address, SClassID FROM student WHERE SInstituteID = ?';
   
     db.query(sql, [iid], (error, result) => {
       if (error) {
