@@ -7,7 +7,7 @@ module.exports = (db) => {
 
   router.get('/api/classdetails/:IId', (req, res) => {
     const iid = req.params.IId;
-    const sql = 'SELECT * FROM Class WHERE InstituteCID = ?';
+    const sql = 'SELECT * FROM class WHERE InstituteCID = ?';
   
     db.query(sql, [iid], (error, result) => {
       if (error) {
