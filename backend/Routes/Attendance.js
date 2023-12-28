@@ -9,7 +9,7 @@ module.exports = (db) => {
         
         
         
-        const sql = 'INSERT INTO Attendance(Attendance_Date, Status, AStudentID, AClassID, AInstituteID) VALUES (?, ?, ?, ?, ?)';
+        const sql = 'INSERT INTO attendance(Attendance_Date, Status, AStudentID, AClassID, AInstituteID) VALUES (?, ?, ?, ?, ?)';
 
         
         
@@ -36,7 +36,7 @@ module.exports = (db) => {
       
       
     
-      const sql = 'SELECT Attendance_Date FROM Attendance WHERE Attendance_Date = ? AND AClassID = (SELECT Class_ID from class where Class_TeacherID=?)';
+      const sql = 'SELECT Attendance_Date FROM attendance WHERE Attendance_Date = ? AND AClassID = (SELECT Class_ID from class where Class_TeacherID=?)';
     
       db.query(sql, [ date,iid], (error, result) => {
         if (error) {
@@ -55,7 +55,7 @@ module.exports = (db) => {
       
       
     
-      const sql = 'SELECT Count(Status) "totalpresent" FROM Attendance WHERE (Attendance_Date = ? AND status= "Present") AND AClassID = (SELECT Class_ID from class where Class_TeacherID=?)';
+      const sql = 'SELECT Count(Status) "totalpresent" FROM attendance WHERE (Attendance_Date = ? AND status= "Present") AND AClassID = (SELECT Class_ID from class where Class_TeacherID=?)';
     
       db.query(sql, [ date,iid], (error, result) => {
         if (error) {
@@ -74,7 +74,7 @@ module.exports = (db) => {
       
       
     
-      const sql = 'SELECT Count(Status) "totalabsent" FROM Attendance WHERE (Attendance_Date = ? AND status= "Absent") AND AClassID = (SELECT Class_ID from class where Class_TeacherID=?)';
+      const sql = 'SELECT Count(Status) "totalabsent" FROM attendance WHERE (Attendance_Date = ? AND status= "Absent") AND AClassID = (SELECT Class_ID from class where Class_TeacherID=?)';
     
       db.query(sql, [ date,iid], (error, result) => {
         if (error) {
