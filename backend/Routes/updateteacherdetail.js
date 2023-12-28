@@ -7,7 +7,7 @@ module.exports = (db) => {
 
   router.get('/api/updateteacherdetails/:TId', (req, res) => {
     const Tid = req.params.TId;
-    const sql = 'SELECT TeacherID,Name,DATE_FORMAT(TD_o_b, "%Y-%m-%d") AS TD_o_b,Email,Address,Password FROM Teacher WHERE TeacherID = ?';
+    const sql = 'SELECT TeacherID,Name,DATE_FORMAT(TD_o_b, "%Y-%m-%d") AS TD_o_b,Email,Address,Password FROM teacher WHERE TeacherID = ?';
   
     db.query(sql, [Tid], (error, result) => {
       if (error) {
