@@ -20,7 +20,7 @@ module.exports = (db) => {
   
   router.get('/api/teacherstudentdetail/:TId', (req, res) => {
     const iid = req.params.TId;
-    const sql = 'SELECT  Regno, Name, DATE_FORMAT(StudentDOB, "%Y-%m-%d") AS StudentDOB, Father_name, Mother_name, Address, SClassID FROM Student WHERE SClassID IN (SELECT Class_ID FROM class WHERE Class_TeacherID=?) ';
+    const sql = 'SELECT  Regno, Name, DATE_FORMAT(StudentDOB, "%Y-%m-%d") AS StudentDOB, Father_name, Mother_name, Address, SClassID FROM student WHERE SClassID IN (SELECT Class_ID FROM class WHERE Class_TeacherID=?) ';
   
     db.query(sql, [iid], (error, result) => {
       if (error) {
