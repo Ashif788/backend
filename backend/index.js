@@ -32,7 +32,7 @@ db.connect((err) => {
     return;
   }
 else{
-  console.log('Connected to the the database');
+  console.log('Connected to  the database');
 }
 
  
