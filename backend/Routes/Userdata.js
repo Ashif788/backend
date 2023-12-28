@@ -24,7 +24,7 @@ module.exports = (db) => {
 
   router.get('/api/teacheruserdata/:TId', (req, res) => {
     const iid = req.params.TId;
-    const sql = 'SELECT Class_ID ,Class_Name,Name,Email,Address,TInstituteID FROM Class,Teacher WHERE TeacherID=Class_TeacherID AND TeacherID=?';
+    const sql = 'SELECT Class_ID ,Class_Name,Name,Email,Address,TInstituteID FROM class,teacher WHERE TeacherID=Class_TeacherID AND TeacherID=?';
   
     db.query(sql, [iid], (error, result) => {
       if (error) {
