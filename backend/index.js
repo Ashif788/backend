@@ -25,7 +25,7 @@ const db = mysql.createConnection({
   database: 'sql5673256',
 });
 
-// Attempt to connect to the database
+
 db.connect((err) => {
   if (err) {
     console.error('Error connecting to database:', err);
