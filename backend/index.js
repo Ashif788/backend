@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 
 app.use(
   cors({
-    origin: "http://localhost:3000/",
+    origin: "https://frontend-kappa-lovat.vercel.app",
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
   })
